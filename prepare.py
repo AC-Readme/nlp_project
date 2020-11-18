@@ -17,15 +17,15 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 ###################################### Clean Data Function ###############################
 
-def basic_clean(text):
+def basic_clean(string):
     '''
     Converts text in to ascii to remove special characters, then converts back in to utf-8
     '''
-    text = (unicodedata.normalize('NFKD', text.lower())
+    string = (unicodedata.normalize('NFKD', string.lower())
             .encode('ascii', 'ignore') # ascii to reduce noise
             .decode('utf-8', 'ignore') # decode using utf-8
            )
-    return re.sub(r"[^a-z0-9\s]", '', text)
+    return re.sub(r"[^a-z0-9\s]", '', string)
 
 def tokenize(string):
     '''
@@ -109,4 +109,4 @@ def clean_data(df):
     df = pd.concat([df, pd.DataFrame({'words': words})], axis=1)
     # Adds colum with lenght of word list
     df['doc_length'] = [len(wordlist) for wordlist in df.words]
-    return df.head()
+    return df
