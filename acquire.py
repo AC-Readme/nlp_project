@@ -11,7 +11,7 @@ import os
 ####################################### URL Import Funciton ############################################
 
 
-def get_url(url):
+def get_urls():
     '''
     This function collects Github repos when given a URL search page
     '''
