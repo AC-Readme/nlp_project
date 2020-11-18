@@ -11,8 +11,34 @@ import os
 ####################################### URL Import Funciton ############################################
 
 
+def get_repos(url):
+    '''
+    This function collects Github repos when given a URL search page
+    '''
+    #codeup user agent
+    headers = {'User-Agent': 'Codeup Data Science'}
 
+    #url
+    response = requests.get(url, headers=headers)
 
+    # using beautiful soup
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # get link to url
+    items = soup.find_all('a', class_='v-align-middle')
+
+    # empty list
+    repos = []
+
+    # getting links from page and appending
+    for item in items:
+        repos.append(item.get('href'))
+        #repos.append(item)
+    
+    #adding github to href
+    repos = ['github.com' + repo for repo in repos]
+
+    return repos
 
 ######################################## Web Scraping Functions #########################################
 
