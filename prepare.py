@@ -15,6 +15,8 @@ from nltk.corpus import stopwords
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.model_selection import train_test_split
+
 ###################################### Clean Data Function ###############################
 
 def basic_clean(string):
@@ -110,3 +112,16 @@ def clean_data(df):
     # Adds colum with lenght of word list
     df['doc_length'] = [len(wordlist) for wordlist in df.words]
     return df
+
+####################################### Train, Validate, Test ######################################
+
+def train_validate_test(df):
+    
+    train_validate, test = train_test_split(df[['language', 'text_filtered']], 
+                                            stratify=df.language, 
+                                            test_size=.2)
+
+    train, validate = train_test_split(train_validate, 
+                                       stratify=train_validate.language, 
+                                       test_size=.25)
+    return train, validate, test
