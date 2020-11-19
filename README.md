@@ -26,10 +26,10 @@
 ***
 
 ## Audience:
-- Data Science Team 
+- General
 
 ## Setting:
-- Professional
+- Informal
 
 ## Workflow:
 ![](https://github.com/CSolitaire/zillow_cluster_project/blob/main/pipeline%20copy.jpg)
