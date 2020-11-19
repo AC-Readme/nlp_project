@@ -101,6 +101,7 @@ def clean_data(df):
     df['language'] = df.language.apply(lemmatize)
     remove_digits = str.maketrans('', '', digits)
     df['language'] = df['language'].str.translate(remove_digits)
+    df['language'] = df['language'].str.strip()
     # Formatts repo contents to make them easier to read
     df['text_cleaned'] = df.content.apply(basic_clean)
     df['text_tokenized'] = df.text_cleaned.apply(tokenize)
