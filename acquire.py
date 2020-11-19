@@ -8,6 +8,40 @@ from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+
+###################################### Get URL Function ################################################
+
+def get_repos(url):
+
+    '''
+    This function returns repos associated with a specific page search (www.github.com/)
+    '''
+    #codeup user agent
+    headers = {'User-Agent': 'Codeup Data Science'}
+
+    #url
+    response = requests.get(url, headers=headers)
+
+    # using beautiful soup
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # get link to url
+    items = soup.find_all('a', class_='v-align-middle')
+
+    # empty list
+    repos = []
+
+    # getting links from page and appending
+    for item in items:
+        repos.append(item.get('href'))
+        #repos.append(item)
+    
+    #adding github to href
+    repos = ['https://github.com' + repo for repo in repos]
+
+    return repos
+
+
 ####################################### URL Import Funciton ############################################
 
 
