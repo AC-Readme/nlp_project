@@ -60,7 +60,7 @@ def lemmatize(string):
 
 
 
-def remove_stopwords(string, extra_words=[], exclude_words=[]):
+def remove_stopwords(string, extra_words=['dictionary', 'machine', 'allow', 'directory','file','use','run','using','example','state','via','generate','right','call','end','given','filename','generated','within','however','several','info','dev','necessary','linux','together','bar'], exclude_words=[]):
     '''
     This function takes in a string, optional extra_words and exclude_words parameters
     with default empty lists and returns a string.
