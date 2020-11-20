@@ -172,7 +172,7 @@ def get_readme_articles(urls, cached=False):
     '''
     This function takes in a list of GitHub Repo urls and a parameter
     with default cached == False which scrapes the title, text, and language for each url, 
-    creates a list of dictionary of features,converts list to df, and returns df.
+    creates a list of dictionary features, converts list to df, and returns df.
     If cached == True, the function returns a df from a json file.
     '''
     if cached == True:
