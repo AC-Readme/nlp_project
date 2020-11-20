@@ -119,10 +119,12 @@ def clean_data(df):
 def train_validate_test(df):
     
     train_validate, test = train_test_split(df[['language', 'text_filtered']], 
+                                            random_state = 123,
                                             stratify=df.language, 
                                             test_size=.2)
 
     train, validate = train_test_split(train_validate, 
+                                       random_state = 123,
                                        stratify=train_validate.language, 
                                        test_size=.25)
     return train, validate, test
