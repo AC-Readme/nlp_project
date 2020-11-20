@@ -12,16 +12,19 @@
 
 ## Data Dictionary
   ---                  ---
-| **Terms**           | **Definition**                                                       |
-| ---                 | ---                                                                  |
-| document            | A single observation, like the body of an email                      |
-| corpus              | Set of documents, dataset, sample, etc                               |
-| tokenize            | Breaking text up into linguistic units such as words or n-grams      |
-| lemmatize           | Return the base or dictionary form of a word, which is the lemma     |
-| stopwords           | Commonly used word (such as “the”, “a”, “an”, “in”) that are ignored |
-| BeautifulSoup       | A Python library for pulling data out of HTML and XML files          |
-| web scraper         | A data science technique used for extracting data from websites      |
-| programing language | A set of commands that a computer understands                        |
+| **Terms**           | **Definition**                                                                          |
+| ---                 | ---                                                                                     |
+| document            | A single observation, like the body of an email                                         |
+| corpus              | Set of documents, dataset, sample, etc                                                  |
+| tokenize            | Breaking text up into linguistic units such as words or n-grams                         |
+| lemmatize           | Return the base or dictionary form of a word, which is the lemma                        |
+| stopwords           | Commonly used word (such as “the”, “a”, “an”, “in”) that are ignored                    |
+| BeautifulSoup       | A Python library for pulling data out of HTML and XML files                             |
+| web scraper         | A data science technique used for extracting data from websites                         |
+| programing language | A set of commands that a computer understands                                           |
+| TF                  | Term Frequency; how often a word appears in a document                                  |
+| IDF                 | Inverse Documnet Frequency; a measure based on in how many documents will a word appear |
+| TF-IDF              | A holistic combination of TF and IDF                                                    |
   ---                  ---                                                    
 ***
 
