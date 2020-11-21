@@ -183,12 +183,12 @@ def predict_readme(url):
     to determine the repository language'''
     
     # scrapes the data
-    df1 = get_readme_articles_func(url,cached=False)
+    df = get_readme_articles(url,cached=False)
     # cleans the data
-    df1 = clean_data(df1)
+    df = clean_data(df)
     
     # using TF-IDF as a feature
-    tfidf = TfidfVectorizer(stop_words='english', min_df=4, 
+    tfidf = TfidfVectorizer(stop_words='english', min_df=20, 
                                  ngram_range=(1,2), 
                                  binary=True)
     # fitting on the entire dataframe
@@ -200,8 +200,8 @@ def predict_readme(url):
     tree = DecisionTreeClassifier(max_depth=4, random_state=123)
     tree.fit(X, y)
     # transforming the feature to the single url
-    X = tfidf.transform(df1.text_filtered)
-    y = df1.language
+    X = tfidf.transform(df.text_filtered)
+    y = df.language
     # predicting the language of the single url
     prediction = tree.predict(X)
     print('This function predicts that the language of the selected repository is:',prediction)
