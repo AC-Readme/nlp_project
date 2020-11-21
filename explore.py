@@ -43,7 +43,7 @@ def get_readme_articles(urls, cached=False):
     If cached == True, the function returns a df from a json file.
     '''
     if cached == True:
-        df = pd.read_json('project_readme.json')
+        df = pd.read_json('test.json')
         
     # cached == False completes a fresh scrape for df     
     else:
@@ -76,7 +76,7 @@ def get_readme_articles(urls, cached=False):
         df = pd.DataFrame(text)
 
         # Write df to a json file for faster access
-        df.to_json('project_readme.json')
+        df.to_json('test.json')
     
     return df
 
