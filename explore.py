@@ -13,7 +13,6 @@ import nltk
 
 from nltk.tokenize.toktok import ToktokTokenizer
 from nltk.corpus import stopwords
-from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import seaborn as sns
 
